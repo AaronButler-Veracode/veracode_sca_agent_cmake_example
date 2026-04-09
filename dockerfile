@@ -62,14 +62,14 @@ RUN cmake --version
 # RUN rm -rfvI /home/testing/cpp-starter-project-cmake/include/*
 # RUN rm -rfvI /home/testing/cpp-starter-project-cmake/tests/*
 
-RUN mkdir -p /home/testing/muble
+RUN mkdir -p /home/testing/mumble
 
-RUN git clone --depth 1 --recursive https://github.com/mumble-voip/mumble.git --recursive /home/testing/muble
+RUN git clone --depth 1 --recursive https://github.com/mumble-voip/mumble.git --recursive /home/testing/mumble
 
-RUN cd /home/testing/muble
+RUN cd /home/testing/mumble
 
-RUN git  -C ./home/testing/muble submodule update --init --recursive
+RUN git  -C ./home/testing/mumble submodule update --init --recursive
 
-RUN cmake -S /home/testing/muble -B /home/testing/muble/build -Denable-postgresql=OFF -Dclient=OFF
+RUN cmake -S /home/testing/mumble -B /home/testing/mumble/build -Denable-postgresql=OFF -Dclient=OFF
 
-#RUN srcclr scan /home/testing/muble/build
+#RUN srcclr scan /home/testing/mumble/build
